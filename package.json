@@ -13,6 +13,7 @@
     "@amcharts/amcharts5": "^5.13.6",
     "@tailwindcss/vite": "^4.1.13",
     "ag-grid-react": "^34.2.0",
+    "echarts": "^6.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.13"
