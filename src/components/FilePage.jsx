@@ -12,8 +12,11 @@ function FilePage() {
               <h2 className="text-xl font-semibold text-gray-800 mb-3">
                 File Upload
               </h2>
+              {/* 파일 업로드 영역 */}
               <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                {/* 파일 업로드 아이콘 */}
                 <div className="space-y-2">
+                  {/* 파일 업로드 아이콘 경로 */}
                   <svg
                     className="mx-auto h-12 w-12 text-gray-400"
                     stroke="currentColor"
@@ -28,11 +31,13 @@ function FilePage() {
                     />
                   </svg>
                   <div className="text-sm text-gray-600">
+                    {/* 파일 업로드 라벨 */}
                     <label
                       htmlFor="file-upload"
                       className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
                     >
                       <span>Upload a file</span>
+                      {/* 파일 업로드 인풋 */}
                       <input
                         id="file-upload"
                         name="file-upload"

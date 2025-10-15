@@ -5,7 +5,7 @@ function Navbar({ currentPage, onPageChange }) {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <h1 className="text-xl font-bold text-gray-900">Dashboard</h1>
+              <h1 className="text-xl font-bold text-gray-900">Test Project</h1>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <button
