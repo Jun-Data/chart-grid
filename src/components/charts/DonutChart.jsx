@@ -2,7 +2,7 @@ import { useRef, useLayoutEffect } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import dummy from "../dummy/data";
+import dummy from "../../dummy/data";
 
 function DonutChart() {
   // 더미데이터를 가져옵니다.

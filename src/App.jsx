@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
-import ChartsPage from "./components/ChartsPage";
-import FilePage from "./components/FilePage";
+import ChartsPage from "./pages/ChartsPage";
+import FilePage from "./pages/FilePage";
+import ThreeDPage from "./pages/ThreeDPage";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("charts");
@@ -16,8 +17,10 @@ function App() {
         return <ChartsPage />;
       case "file":
         return <FilePage />;
+      case "3D":
+        return <ThreeDPage />;
       default:
-        return <ChartsPage />;
+        return <ThreeDPage />;
     }
   };
 

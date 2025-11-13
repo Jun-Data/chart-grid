@@ -1,10 +1,10 @@
-import Grid from "./Grid";
-import NestedDonutChart from "./NestedDonutChart";
-import DonutChart from "./DonutChart";
-import Line from "./Line";
-import Ring from "./Ring";
-import Bar from "./Bar";
-import Gauge from "./Gauge";
+import Grid from "../components/Grid";
+import NestedDonutChart from "../components/charts/NestedDonutChart";
+import DonutChart from "../components/charts/DonutChart";
+import Line from "../components/charts/Line";
+import Ring from "../components/charts/Ring";
+import Bar from "../components/charts/Bar";
+import Gauge from "../components/charts/Gauge";
 
 function ChartsPage() {
   return (
