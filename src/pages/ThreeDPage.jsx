@@ -6,10 +6,10 @@ function Model({ onEquipmentClick, selectedName }) {
   // GLB 파일 로드
   const gltf = useGLTF("/models/sol.glb");
 
-  // 설비 목록 상태
+  // 찾은 설비 목록
   const [equipments, setEquipments] = useState([]);
 
-  // GLB에서 설비 추출
+  // GLB에서 설비 객체 추출
   useEffect(() => {
     if (!gltf?.scene) {
       return;
@@ -34,7 +34,7 @@ function Model({ onEquipmentClick, selectedName }) {
     setEquipments(found);
   }, [gltf]);
 
-  // 초기 설정: 각 설비에 클릭 이벤트 추가 및 원본 재질 저장
+  // 설비 객체에 커스텀 데이터(이름표 및 원본 재질) 초기화 및 저장
   useEffect(() => {
     equipments.forEach((equipment) => {
       equipment.traverse((child) => {
