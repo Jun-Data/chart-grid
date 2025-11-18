@@ -1,6 +1,13 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState, useEffect } from "react";
 import { useGLTF, OrbitControls } from "@react-three/drei";
+import EquipmentModal from "../components/3d/Modal";
+
+const equipmentAnimations = {};
+for (let i = 7; i <= 34; i++) {
+  const num = String(i).padStart(3, "0");
+  equipmentAnimations[`sol_Cylinder${num}`] = "/models/animation.glb";
+}
 
 function Model({ onEquipmentClick, selectedName }) {
   // GLB 파일 로드
@@ -96,6 +103,7 @@ function Model({ onEquipmentClick, selectedName }) {
 
 export default function ThreeDPage() {
   const [selectedEquipment, setSelectedEquipment] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -114,7 +122,10 @@ export default function ThreeDPage() {
               {/* 3D 모델  */}
               <Suspense fallback={null}>
                 <Model
-                  onEquipmentClick={setSelectedEquipment}
+                  onEquipmentClick={(name) => {
+                    setSelectedEquipment(name);
+                    setIsModalOpen(true);
+                  }}
                   selectedName={selectedEquipment}
                 />
               </Suspense>
@@ -125,6 +136,14 @@ export default function ThreeDPage() {
           </div>
         </div>
       </div>
+
+      {/* 모달 */}
+      <EquipmentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        equipmentName={selectedEquipment}
+        animationPath={equipmentAnimations[selectedEquipment]}
+      />
     </div>
   );
 }
