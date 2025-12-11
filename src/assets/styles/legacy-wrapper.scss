@@ -1,0 +1,18 @@
+/*
+ * Mixin 방식으로 퍼블리셔 코드를 캡슐화합니다.
+ * .legacy-root 안에서만 실행되어 완벽한 CSS 격리를 보장합니다.
+ * @mixin/@include는 Sass의 핵심 기능으로 미래 지향적이며 안전합니다.
+ */
+
+@use "./publish/common" as common;
+@use "./publish/kta" as kta;
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.legacy-root {
+  @include common.common-styles;
+  @include kta.kta-styles;
+
+  background-color: #fafafa;
+  min-height: 100vh;
+}

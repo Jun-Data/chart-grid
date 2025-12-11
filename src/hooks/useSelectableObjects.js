@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
-/**
- * GLB 모델에서 특정 패턴의 객체를 추출
- * @param {Object} gltf - useGLTF로 로드한 GLB 객체
- * @param {RegExp} pattern - 객체 이름 매칭 정규식
- * @param {number} minObjectCount - 완전히 로드된 씬 확인용 (기본값: 100)
- * @returns {Array} 추출된 객체 배열
- */
 
+//GLB 모델에서 특정 패턴의 객체를 추출
 export default function useSelectableObjects(
   gltf,
   pattern,
@@ -36,7 +30,7 @@ export default function useSelectableObjects(
       return;
     }
 
-    console.log(`발견된 객체: ${found.legth}개`);
+    console.log(`발견된 객체: ${found.length}개`);
     setObjects(found);
   }, [gltf, pattern, minObjectCount]);
   return objects;

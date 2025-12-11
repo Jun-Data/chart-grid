@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stats, useGLTF } from "@react-three/drei";
 import Modal from "../components/3d/Modal";
 import Model from "../components/3d/Model";
 
@@ -9,6 +9,9 @@ for (let i = 7; i <= 34; i++) {
   const num = String(i).padStart(3, "0");
   equipmentAnimations[`sol_Cylinder${num}`] = "/models/animation.glb";
 }
+
+useGLTF.preload("models/sol.glb");
+useGLTF.preload("models/animation.glb");
 
 export default function ThreeDPage() {
   const [selectedEquipment, setSelectedEquipment] = useState(null);
@@ -24,6 +27,9 @@ export default function ThreeDPage() {
 
           <div className="w-full h-[600px] bg-gray-900 rounded">
             <Canvas camera={{ position: [-49.48, 18.58, 19.42], fov: 50 }}>
+              {/* 성능 모니터 */}
+              <Stats showPanel={0} className="stats" />
+
               {/* 조명 */}
               <ambientLight intensity={1} />
               <directionalLight position={[10, 10, 5]} intensity={1} />

@@ -2,17 +2,10 @@ import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import useSelectableObjects from "../../hooks/useSelectableObjects";
 import useHighlightMaterial from "../../hooks/useHighlightMaterial";
+import { Html } from "@react-three/drei";
+import MachinePopup from "./Popup";
 
-/**
- * 클릭 가능하고 선택 효과가 있는 3D 모델 컴포넌트
- *
- * @param {string} modelPath - GLB 파일 경로
- * @param {RegExp} pattern - 선택 가능한 객체 이름 패턴
- * @param {Function} onSelect - 객체 선택 시 콜백 (객체 이름 전달)
- * @param {string|null} selectedName - 현재 선택된 객체 이름
- * @param {Object} highlightConfig - 하이라이트 색상 설정 (선택사항)
- */
-
+// 클릭 가능하고 선택 효과가 있는 3D 모델 컴포넌트
 export default function Model({
   modelPath,
   pattern,

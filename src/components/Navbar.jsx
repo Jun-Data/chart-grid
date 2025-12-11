@@ -1,4 +1,13 @@
-function Navbar({ currentPage, onPageChange }) {
+import { NavLink } from "react-router-dom";
+
+function Navbar() {
+  const getLinkClassName = ({ isActive }) =>
+    `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+      isActive
+        ? "border-blue-500 text-gray-900"
+        : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+    }`;
+
   return (
     <nav className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,36 +17,21 @@ function Navbar({ currentPage, onPageChange }) {
               <h1 className="text-xl font-bold text-gray-900">Test Project</h1>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <button
-                onClick={() => onPageChange("charts")}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  currentPage === "charts"
-                    ? "border-blue-500 text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                }`}
-              >
+              <NavLink to="/" className={getLinkClassName}>
                 Charts
-              </button>
-              <button
-                onClick={() => onPageChange("file")}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  currentPage === "file"
-                    ? "border-blue-500 text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                }`}
-              >
+              </NavLink>
+              <NavLink to="/file" className={getLinkClassName}>
                 File
-              </button>
-              <button
-                onClick={() => onPageChange("3D")}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  currentPage === "3D"
-                    ? "border-blue-500 text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                }`}
-              >
+              </NavLink>
+              <NavLink to="/3d" className={getLinkClassName}>
                 3D
-              </button>
+              </NavLink>
+              <NavLink to="/test" className={getLinkClassName}>
+                Publish
+              </NavLink>
+              <NavLink to="/test2" className={getLinkClassName}>
+                Publish2
+              </NavLink>
             </div>
           </div>
         </div>

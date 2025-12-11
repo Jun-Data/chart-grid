@@ -1,34 +1,25 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ChartsPage from "./pages/ChartsPage";
 import FilePage from "./pages/FilePage";
 import ThreeDPage from "./pages/ThreeDPage";
+import TestIndexPage from "./pages/TestIndexPage";
+import TestPublishPage from "./pages/TestPublishPage";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("charts");
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const renderCurrentPage = () => {
-    switch (currentPage) {
-      case "charts":
-        return <ChartsPage />;
-      case "file":
-        return <FilePage />;
-      case "3D":
-        return <ThreeDPage />;
-      default:
-        return <ThreeDPage />;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar currentPage={currentPage} onPageChange={handlePageChange} />
-      {renderCurrentPage()}
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ChartsPage />} />
+          <Route path="/file" element={<FilePage />} />
+          <Route path="/3d" element={<ThreeDPage />} />
+          <Route path="/test" element={<TestIndexPage />} />
+          <Route path="/test2" element={<TestPublishPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

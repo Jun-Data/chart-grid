@@ -5,6 +5,7 @@ import Line from "../components/charts/Line";
 import Ring from "../components/charts/Ring";
 import Bar from "../components/charts/Bar";
 import Gauge from "../components/charts/Gauge";
+import Pie from "../components/charts/Pie";
 
 function ChartsPage() {
   return (
@@ -30,6 +31,7 @@ function ChartsPage() {
             <Line />
             <Ring />
             <Bar />
+            <Pie />
           </div>
         </section>
       </div>

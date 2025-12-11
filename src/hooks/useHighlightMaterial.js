@@ -58,7 +58,7 @@ export default function useHighlightMaterial(
           } else {
             // 선택 안 됨: 원본 재질로 복원
             if (child.userData.isHighlighted) {
-              child.material = originalMaterial.clone();
+              child.material = originalMaterial;
               child.userData.isHighlighted = false;
             }
           }
