@@ -1,4 +1,3 @@
-import EChartsReact from "echarts-for-react";
 import ReactECharts from "echarts-for-react";
 
 export default function Pie() {
@@ -15,10 +14,6 @@ export default function Pie() {
     },
     tooltip: {
       trigger: "item",
-    },
-    legend: {
-      bottom: "5%",
-      left: "center",
     },
     series: [
       {

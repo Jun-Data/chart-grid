@@ -6,6 +6,7 @@ import Ring from "../components/charts/Ring";
 import Bar from "../components/charts/Bar";
 import Gauge from "../components/charts/Gauge";
 import Pie from "../components/charts/Pie";
+import PieRefer from "../components/charts/PieRefer";
 
 function ChartsPage() {
   return (
@@ -32,6 +33,7 @@ function ChartsPage() {
             <Ring />
             <Bar />
             <Pie />
+            <PieRefer />
           </div>
         </section>
       </div>
