@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 
 const Echart = ({ chartCss, chartOption, onEvents }) => {
@@ -26,7 +26,7 @@ const Echart = ({ chartCss, chartOption, onEvents }) => {
 
   // 2. 차트 옵션 업데이트 (chartOption prop이 변경될 때마다 실행)
   useEffect(() => {
-    if (chartInstanceRef.current) {
+    if (chartInstanceRef.current && chartOption) {
       chartInstanceRef.current.setOption(chartOption);
     }
   }, [chartOption]);

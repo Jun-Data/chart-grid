@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import useSelectableObjects from "../../hooks/useSelectableObjects";
 import useHighlightMaterial from "../../hooks/useHighlightMaterial";
-import { Html } from "@react-three/drei";
-import MachinePopup from "./Popup";
 
 // 클릭 가능하고 선택 효과가 있는 3D 모델 컴포넌트
 export default function Model({
