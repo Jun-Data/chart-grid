@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import AnimatedModel from "./AnimatedModel";
+import { X } from "lucide-react";
 
 export default function Modal({
   isOpen,
@@ -33,8 +34,11 @@ export default function Modal({
           <h2 className="text-2xl font-bold text-gray-900">{equipmentName}</h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 text-2xl"
-          ></button>
+            className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
+            title="닫기"
+          >
+            <X className="w-6 h-6" />
+          </button>
         </div>
         {/* 3D Canvas */}
         <div className="w-full h-[500px] bg-gray-900 rounded">

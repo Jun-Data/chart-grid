@@ -47,6 +47,28 @@ export default function Model({
     }
   };
 
-  // 6. 씬 렌더링
-  return <primitive object={gltf.scene} onClick={handleClick} />;
+  // 6. 마우스 커서 변경
+  const handlePointerOver = (event) => {
+    event.stopPropagation(); // 이벤트 버블링 방지
+
+    const objectName = event.object.userData.objectName;
+
+    if (objectName) {
+      document.body.style.cursor = "pointer";
+    }
+  };
+
+  const handlePointerOut = () => {
+    document.body.style.cursor = "default";
+  };
+
+  // 7. 씬 렌더링
+  return (
+    <primitive
+      object={gltf.scene}
+      onClick={handleClick}
+      onPointerOver={handlePointerOver}
+      onPointerOut={handlePointerOut}
+    />
+  );
 }
